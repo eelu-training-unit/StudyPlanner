@@ -123,7 +123,315 @@
     <script>
       $(function () {
         let courses = null;
-        const data_courses = {};
+        const data_courses = {
+          //Sem1
+          IT111: {
+            name: "Electronics",
+            semester: 1,
+            prerequisites: [],
+            hours: 3,
+          },
+          MA111: {
+            name: "Mathematics1",
+            semester: 1,
+            prerequisites: [],
+            hours: 3,
+          },
+          HU111: {
+            name: "Technical Report Writing",
+            semester: 1,
+            prerequisites: [],
+            hours: 2,
+          },
+          HU413: {
+            name: "Human Rights",
+            semester: 1,
+            prerequisites: [],
+            hours: 2,
+          },
+          MA112: {
+            name: "Discrete Math",
+            semester: 1,
+            prerequisites: [],
+            hours: 3,
+          },
+          IT110: {
+            name: "Introduction to Computers",
+            semester: 1,
+            prerequisites: [],
+            hours: 3,
+          },
+          //Sem2
+          ST121: {
+            name: "Probability and Statistics-1",
+            semester: 2,
+            prerequisites: ["MA111"],
+            hours: 3,
+          },
+          HU112: {
+            name: "Creative and Scientific Thinking",
+            semester: 2,
+            prerequisites: [],
+            hours: 2,
+          },
+          MA113: {
+            name: "Mathematics-2",
+            semester: 2,
+            prerequisites: ["MA111"],
+            hours: 3,
+          },
+          HU101: {
+            name: "Micro Economics",
+            semester: 2,
+            prerequisites: [],
+            hours: 2,
+          },
+          IT113: {
+            name: "Logic Design",
+            semester: 2,
+            prerequisites: ["IT111"],
+            hours: 3,
+          },
+          IT114: {
+            name: "Programming Techniques",
+            semester: 2,
+            prerequisites: ["IT110"],
+            hours: 3,
+          },
+          // Second Year
+          IT215: {
+            name: "Object Oriented Programing",
+            semester: 3,
+            prerequisites: ["IT114"],
+            hours: 3,
+          },
+          DS211: {
+            name: "Introduction to Database systems",
+            semester: 3,
+            prerequisites: ["IT114"],
+            hours: 3,
+          },
+          MA214: {
+            name: "Mathematics-3",
+            semester: 3,
+            prerequisites: ["MA113"],
+            hours: 3,
+          },
+          IT231: {
+            name: "Computer Networks Technology",
+            semester: 3,
+            prerequisites: ["IT110"],
+            hours: 3,
+          },
+          ST222: {
+            name: "Probability and Statistics-2",
+            semester: 3,
+            prerequisites: ["ST121"],
+            hours: 3,
+          },
+          IT240: {
+            name: "Introduction to Software Engineering",
+            semester: 3,
+            prerequisites: ["IT114"],
+            hours: 3,
+          },
+
+          //Sem 2
+          IT217: {
+            name: "Introduction to Operation Research",
+            semester: 4,
+            prerequisites: ["IT114","ST121"],
+            hours: 3,
+          },
+          IT216: {
+            name: "Data Structure",
+            semester: 4,
+            prerequisites: ["IT215"],
+            hours: 3,
+          },
+          DS261: {
+            name: "Geographic Information Systems",
+            semester: 4,
+            prerequisites: ["DS211"],
+            hours: 3,
+          },
+          IT230: {
+            name: "Web Technology",
+            semester: 4,
+            prerequisites: ["IT215"],
+            hours: 3,
+          },
+          DS231: {
+            name: "Business Process Management",
+            semester: 4,
+            prerequisites: ["IT240"],
+            hours: 3,
+          },
+          LB212: {
+            name: "Database systems Lab",
+            semester: 4,
+            prerequisites: ["DS211"],
+            hours: 3,
+          },
+
+          //Third year
+          //Sem 5
+          LB311: {
+            name: "Business Process Modelling & Simulation Lab",
+            semester: 5,
+            prerequisites: ["DS231"],
+            hours: 3,
+          },
+          AI311: {
+            name: "Artificial intelligence",
+            semester: 5,
+            prerequisites: ["IT216"],
+            hours: 3,
+          },
+          IT319: {
+            name: "Operating Systems",
+            semester: 5,
+            prerequisites: ["IT216"],
+            hours: 3,
+          },
+          AI321: {
+            name: "Machine Learning Fundamentals",
+            semester: 5,
+            prerequisites: ["ST222","MA214"],
+            hours: 3,
+          },
+          IT318: {
+            name: "Computer Organization",
+            semester: 5,
+            prerequisites: ["IT113","IT216"],
+            hours: 3,
+          },
+          IT341: {
+            name: "Algorithms analysis and Design",
+            semester: 5,
+            prerequisites: ["IT216"],
+            hours: 3,
+          },
+
+
+          //Sem 6
+          DS313: {
+            name: "Advanced Database Systems",
+            semester: 6,
+            prerequisites: ["DS211"],
+            hours: 3,
+          },
+          DS312: {
+            name: "Fundamentals of Data Science",
+            semester: 6,
+            prerequisites: ["IT215"],
+            hours: 3,
+          },
+          DSxxx: {
+            name: "Elective 2 ",
+            semester: 6,
+            prerequisites: [],
+            hours: 3,
+          },
+          DSxxx: {
+            name: "Elective 1 ",
+            semester: 6,
+            prerequisites: [],
+            hours: 3,
+          },
+          DS314: {
+            name: "Fundamentals of Data Mining",
+            semester: 6,
+            prerequisites: ["MA214","ST222"],
+            hours: 3,
+          },
+          LB312: {
+            name: "Geographic Information Systems Lab",
+            semester: 6,
+            prerequisites: ["DS261"],
+            hours: 3,
+          },
+
+          // Fourth year 
+          // Sem 7
+          DSxxx: {
+            name: "Elective 3",
+            semester: 7,
+            prerequisites: [],
+            hours: 3,
+          },
+          HU427: {
+            name: "Entrepreneurship",
+            semester: 7,
+            prerequisites: [],
+            hours: 3,
+          },
+          DS416: {
+            name: "Data Analysis and Visualization",
+            semester: 7,
+            prerequisites: ["DS314"],
+            hours: 3,
+          },
+          DS421: {
+            name: "Big data Analytics",
+            semester: 7,
+            prerequisites: ["DS313"],
+            hours: 3,
+          },
+          DSxxx: {
+            name: "Elective 4",
+            semester: 7,
+            prerequisites: [],
+            hours: 3,
+          },
+          PC401: {
+            name: "Project (1)",
+            semester: 7,
+            prerequisites: [],
+            hours: 3,
+          },
+          
+          //Sem 8 
+
+          LB411: {
+            name: "Big Data and Data Science Lab",
+            semester: 8,
+            prerequisites: ["DS312","DS421"],
+            hours: 3,
+          },
+          DS424: {
+            name: "Business Intelligence and Decision Support Systems",
+            semester: 8,
+            prerequisites: ["IT110","IT217","DS421"],
+            hours: 3,
+          },
+          DSxxx: {
+            name: "Elective 5",
+            semester: 8,
+            prerequisites: [],
+            hours: 3,
+          },
+          HU402: {
+            name: "Fundamental of Management",
+            semester: 8,
+            prerequisites: [],
+            hours: 3,
+          },
+          PC402: {
+            name: "Project (2)",
+            semester: 8,
+            prerequisites: ["PC401"],
+            hours: 3,
+          },
+          LB412: {
+            name: "Data Visualization Lab",
+            semester: 8,
+            prerequisites: ["DS416"],
+            hours: 3,
+          },
+          
+        };
+
         const ai_courses = {
           //Sem1
           IT111: {
@@ -953,6 +1261,7 @@
             console.log("ai selected");
             populateCourses(ai_courses);
           } else if (ev.target.id === "ds") {
+            populateCourses(data_courses);
           }
         });
       });
