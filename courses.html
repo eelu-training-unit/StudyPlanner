@@ -939,10 +939,10 @@
         $(".program").click((ev) => {
           let it = document.querySelector("#it");
           let ai = document.querySelector("#ai");
-          let ds = document.querySelector("#ds");
+        
           it.classList.remove("active");
           ai.classList.remove("active");
-          ds.classList.remove("active");
+         
 
           ev.target.classList.add("active");
 
@@ -952,9 +952,7 @@
           } else if (ev.target.id === "ai") {
             console.log("ai selected");
             populateCourses(ai_courses);
-          } else if (ev.target.id === "ds") {
-            populateCourses(data_courses);
-          }
+          } 
         });
       });
     </script>
@@ -962,7 +960,7 @@
   <body>
     <h2 style="position: fixted; top: 0px">
       New Regulation -( <span id="it" class="program active">IT</span> )- (
-      <span id="ai" class="program">AI</span>)- ( <span id="ds" class="program">Data Science</span>)- Courses
+      <span id="ai" class="program">AI</span>) Courses
     </h2>
     <table id="courses_table">
       
